@@ -64,10 +64,11 @@
             margin-bottom: -1px;
             padding-top: 40px;
         }
+
+        /* ── Profile section ── */
         .profile {
-            padding: 28px 25px 10px;
+            padding: 24px 25px 10px;
             text-align: center;
-            border-bottom: 1px solid var(--gold-light);
         }
         .name-row {
             display: flex;
@@ -89,18 +90,40 @@
             color: var(--gold);
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
         }
         .company-name {
             font-size: var(--fs-md);
             font-weight: 600;
             color: var(--black-soft);
+            margin-bottom: 14px;
         }
+
+        /* Tags directly under company name */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tag {
+            padding: 6px 14px;
+            background: var(--gold-light);
+            border-radius: 6px;
+            font-size: var(--fs-sm);
+            font-weight: 700;
+            color: var(--gold-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        /* Contact icons */
         .contact-strip {
             display: flex;
             justify-content: center;
             gap: 12px;
-            margin: 22px 0 4px;
+            margin-bottom: 0;
         }
         .circle-icon {
             width: 42px;
@@ -121,14 +144,24 @@
             color: var(--white);
             transform: translateY(-3px);
         }
+
+        /* Divider */
+        .section-divider {
+            height: 1px;
+            background: var(--gold-light);
+            margin: 0 25px;
+        }
+
+        /* Card body — left-aligned content */
         .card-body { padding: 0 28px 38px; }
+
         .label {
             font-size: var(--fs-sm);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.12em;
             color: var(--gold-dark);
-            margin: 26px 0 12px;
+            margin: 14px 0 12px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -139,22 +172,14 @@
             height: 1px;
             background: var(--gold-light);
         }
+
         .bio-text {
             font-size: var(--fs-md);
             line-height: 1.65;
             color: var(--black-soft);
+            text-align: left;
         }
-        .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-        .tag {
-            padding: 6px 14px;
-            background: var(--gold-light);
-            border-radius: 6px;
-            font-size: var(--fs-sm);
-            font-weight: 700;
-            color: var(--gold-dark);
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-        }
+
         .contact-text-group {
             display: flex;
             flex-direction: column;
@@ -168,6 +193,7 @@
             color: var(--black-soft);
             font-size: var(--fs-md);
             line-height: 1.5;
+            text-align: left;
             transition: color 0.2s;
         }
         .text-line:hover { color: var(--gold); }
@@ -178,6 +204,7 @@
             text-align: center;
             flex-shrink: 0;
         }
+
         .btn-stack {
             display: flex;
             flex-direction: column;
@@ -203,6 +230,7 @@
             transition: background 0.25s, transform 0.2s;
         }
         .action-link:hover { background: var(--gold-dark); transform: scale(1.02); }
+
         .footer {
             background: var(--gold-pale);
             border-top: 1px solid var(--gold-light);
@@ -228,6 +256,7 @@
         }
         .action-btn:hover { color: var(--gold); }
         .divider { color: var(--gold-mid); }
+
         .modal {
             display: none;
             position: fixed;
@@ -257,10 +286,14 @@
 </head>
 <body>
 <div class="card">
+
+    <!-- Photo header -->
     <div class="header-visual">
         <div class="bg-rect"></div>
         <img src="images/suit_photo1.png" alt="Nirav Modi" class="cutout-photo">
     </div>
+
+    <!-- Profile: name → designation → company → tags → icons -->
     <div class="profile">
         <div class="name-row">
             <img src="images/logo1.png" alt="Logo" class="company-logo">
@@ -268,32 +301,37 @@
         </div>
         <p class="designation">Advocate &nbsp;|&nbsp; LLM &nbsp;|&nbsp; FCIArb (London)</p>
         <p class="company-name">NR Modi &amp; Associates</p>
-        <div class="contact-strip">
-            <a href="tel:+919898021102" class="circle-icon"><i class="fa-solid fa-phone"></i></a>
-            <a href="https://wa.me/919898021102" class="circle-icon"><i class="fa-brands fa-whatsapp"></i></a>
-            <a id="icon-email" class="circle-icon"><i class="fa-solid fa-envelope"></i></a>
-            <!-- <a href="https://nrmodiassociates.com" target="_blank" class="circle-icon"><i class="fa-solid fa-globe"></i></a> -->
-            <a href="https://maps.app.goo.gl/E4FY8zNjbyTfFxDx8" target="_blank" class="circle-icon"><i class="fa-solid fa-location-dot"></i></a>
-        </div>
-    </div>
-    <div class="card-body">
-	<br>
-                <div class="tags">
+
+        <!-- Tags under company name -->
+        <div class="tags">
             <span class="tag">Advocate</span>
             <span class="tag">Legal Advisor</span>
             <span class="tag">Arbitrator</span>
         </div>
-       <!-- <div class="label">About</div> -->
-	<br>
+
+        <!-- Four contact icons -->
+        <div class="contact-strip">
+            <a href="tel:+919898021102" class="circle-icon"><i class="fa-solid fa-phone"></i></a>
+            <a href="https://wa.me/919898021102" class="circle-icon"><i class="fa-brands fa-whatsapp"></i></a>
+            <a id="icon-email" class="circle-icon"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://maps.app.goo.gl/E4FY8zNjbyTfFxDx8" target="_blank" class="circle-icon"><i class="fa-solid fa-location-dot"></i></a>
+        </div>
+    </div>
+
+    <!-- Body: bio + contact details (left-aligned) -->
+    <div class="card-body">
+
+        <div class="label">About</div>
         <p class="bio-text">
-	Certified Arbitrator and Fellow of Chartered Institute of Arbitrators, London. Former Additional Public Prosecutor and Asst. Government Pleader, Government of Gujarat.</p>
+            Certified Arbitrator and Fellow of Chartered Institute of Arbitrators, London. Former Additional Public Prosecutor and Asst. Government Pleader, Government of Gujarat.
+        </p>
+
         <div class="label">Contact</div>
         <div class="contact-text-group">
             <a href="tel:+919898021102" class="text-line">
                 <i class="fa-solid fa-phone"></i>
                 <span>+91 98980 21102</span>
             </a>
-            <!-- Email addresses: display uses HTML entities; href injected by JS at runtime -->
             <a id="link-email1" class="text-line">
                 <i class="fa-solid fa-envelope"></i>
                 <span>niravmodiadvo&#64;gmail&#46;com</span>
@@ -302,15 +340,12 @@
                 <i class="fa-solid fa-envelope"></i>
                 <span>nrmodiassociates&#64;gmail&#46;com</span>
             </a>
-            <!-- <a href="https://nrmodiassociates.com" target="_blank" class="text-line">
-                <i class="fa-solid fa-globe"></i>
-                <span>nrmodiassociates&#46;com</span>
-            </a> -->
             <a href="https://maps.app.goo.gl/E4FY8zNjbyTfFxDx8" target="_blank" class="text-line">
                 <i class="fa-solid fa-location-dot"></i>
                 <span>B-49, Amidhara Society, Old RTO Road, Bharuch-392001, Gujarat, India.</span>
             </a>
         </div>
+
         <div class="btn-stack">
             <button class="action-link" onclick="downloadVCF()">
                 <i class="fa-solid fa-user-plus"></i>
@@ -326,10 +361,9 @@
             </a>
         </div>
     </div>
+
     <footer class="footer">
         <div class="share-actions">
-            <button class="action-btn" onclick="toggleModal()">QR Code</button>
-            <span class="divider">|</span>
             <button class="action-btn" onclick="copyLink()">Copy Link</button>
         </div>
     </footer>
@@ -345,11 +379,6 @@
 </div>
 
 <script>
-    /*
-     * All email addresses are constructed at runtime in JavaScript.
-     * Cloudflare's obfuscation scanner reads static HTML only —
-     * it cannot intercept runtime-assembled strings.
-     */
     (function () {
         var p1  = 'niravmodiadvo';
         var p2  = 'nrmodiassociates';
